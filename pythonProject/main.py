@@ -354,5 +354,3 @@ if __name__ == "__main__":
     mainWnd.show()
 
     sys.exit(app.exec_())
-
-    # display = Display(ui, mainWnd)

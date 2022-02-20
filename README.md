@@ -1,31 +1,39 @@
-# 环境配置
+# Installation and user guides
+
+
+
+### Prepare Environments
 
 Install anaconda navigator: [Official website](https://www.anaconda.com/products/individual)
 
 Install Pycharm: [Official website](https://www.jetbrains.com/pycharm/download/#section=windows)
 
- 
+Install git: [Official website](https://git-scm.com/)
 
 ### Download alphapose
 
-alphapose can be retrieved from [here](https://github.com/MVIG-SJTU/AlphaPose/)
+Alphapose can be retrieved from [here](https://github.com/MVIG-SJTU/AlphaPose/)
 
-Windows 系统：
+Windows：
 
 - open anaconda
 
 - select Powershell prompt
 
-paste and run the following codes
+Paste and run the following codes
 
 ```
 conda create -n alphapose python=3.6 -y
 conda activate alphapose
 conda install pytorch==1.1.0 torchvision==0.3.0
-git clone https://github.com/MVIG-SJTU/AlphaPose.git
+```
+
+Open gitCMD and run `git clone https://github.com/MVIG-SJTU/AlphaPose.git`
+
+Run the following codes with anaconda powershell prompt
+
+```
 cd AlphaPose
-export PATH=/usr/local/cuda/bin/:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:$LD_LIBRARY_PATH
 python -m pip install cython
 sudo apt-get install libyaml-dev
 python setup.py build develop
@@ -46,9 +54,15 @@ Download tracking model，move to `AlphaPose/detector/tracker/data/`
 
  
 
+### Install dependencies
+
+We created a [requirements](https://github.com/Hz-sw/CTB-sedentary-detection/blob/main/requirements.txt) file from a tested environment. Feel free to install those dependencies with pip install or conda install.
+
+
+
 ### Use anaconda environment in pycharm
 
-打开pycharm，新建项目，在窗口中选择这里
+Open pycharm，create a project，then select the right interpreter from Anaconda environments by referring to the pictures below:
 
 ![img](https://github.com/Hz-sw/CTB-sedentary-detection/blob/main/docs/clip_image002.png)
 
@@ -56,11 +70,24 @@ Download tracking model，move to `AlphaPose/detector/tracker/data/`
 
 ![img](https://github.com/Hz-sw/CTB-sedentary-detection/blob/main/docs/clip_image006.png)
 
-在根目录中找到一个叫conda或者Anaconda的文件夹，选择envs/Alphapose/python.exe
+In the root of your system driver, you can find a folder named conda or Anaconda, select `envs/Alphapose/python.exe`
 
-然后点击确定-确定-创建，完成环境搭建。
+Click "create" to complete environment creation.
 
 ### Run
 
+Our codes are mainly stored in the folder pythonProject.
 
+You may download this folder and place it right under the `\Alphapose` folder
 
+To run the program, pls follow the following instruction:
+
+1. make sure all the files are under `c:\users\zyh\Alphapose\`
+2. activate Anaconda environment "Alphapose"
+3. run python `\Alphapose\ pythonproject\main.py`
+
+We created 2 simple bat files to help on above steps. You can run it if you find it helpful. 
+
+`CopyToRightPath.bat` [here](https://github.com/Hz-sw/CTB-sedentary-detection/blob/main/CopyToRightPath.bat)
+
+`DemoWithMain.bat` [here](https://github.com/Hz-sw/CTB-sedentary-detection/blob/main/DemoWithMain.bat)
